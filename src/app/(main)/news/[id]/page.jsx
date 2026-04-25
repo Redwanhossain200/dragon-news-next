@@ -5,6 +5,19 @@ import Link from 'next/link';
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 
+export const generateMetadata = async ({ params }) => {
+  const resolvedParams = await params;
+  const id = resolvedParams.id;
+  const news = await getNewsDetailsById(id);
+
+  return {
+    title: news ? news.title : 'Dragon News - News Details',
+    description: news
+      ? news.excerpt
+      : 'Read the latest news and updates on Dragon News',
+  };
+};
+
 const NewsDetailsPage = async ({ params }) => {
   const resolvedParams = await params;
   const id = resolvedParams.id;
