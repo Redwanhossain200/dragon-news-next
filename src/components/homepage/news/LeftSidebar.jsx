@@ -3,7 +3,7 @@ import React from 'react';
 
 const LeftSidebar = ({ categories, activeId }) => {
   return (
-    <div>
+    <div className='animate-fade-in'>
       <h2 className="font-bold text-lg mb-4">All Categories</h2>
       <ul className="flex flex-row md:flex-col gap-3 overflow-x-auto md:overflow-visible pb-4 md:pb-0 no-scrollbar">
         {categories.news_category.map((category) => (

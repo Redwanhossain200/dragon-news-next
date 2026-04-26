@@ -45,7 +45,7 @@ const NewsDetailsPage = async ({ params }) => {
                 alt={news.title}
                 width={1200}
                 height={800}
-                className="w-full h-auto object-cover rounded-md transition-transform duration-500 hover:scale-[1.02]"
+                className="w-full h-auto object-cover rounded-md"
                 priority
               />
             </figure>

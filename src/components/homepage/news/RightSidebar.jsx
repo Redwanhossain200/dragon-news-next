@@ -23,12 +23,12 @@ const RightSidebar = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 animate-fade-in">
       <div className="flex flex-col gap-2">
         <h2 className="font-bold text-lg">Login With</h2>
         <button
           onClick={handleGoogleSignin}
-          className="btn btn-outline btn-info w-full normal-case transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+          className="btn btn-outline btn-info w-full normal-case transition-all duration-300 hover:text-white hover:scale-[1.02] hover:shadow-md">
           <FaGoogle /> Login With Google
         </button>
         <button

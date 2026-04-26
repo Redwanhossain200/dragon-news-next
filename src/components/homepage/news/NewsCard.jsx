@@ -7,7 +7,7 @@ import { IoIosStar } from 'react-icons/io';
 
 const NewsCard = ({ news }) => {
   return (
-    <div className="card bg-base-100 shadow-sm border border-gray-200 rounded-md overflow-hidden mb-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="card bg-base-100 animate-fade-in shadow-sm border border-gray-200 rounded-md overflow-hidden mb-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="flex justify-between items-center bg-slate-100 p-3 md:p-4">
         <div className="flex items-center gap-3">
           <Image
@@ -42,7 +42,7 @@ const NewsCard = ({ news }) => {
             alt={news.title}
             width={800}
             height={450}
-            className="w-full h-auto object-cover rounded-sm transition-transform duration-500 hover:scale-105"
+            className="w-full h-auto object-cover rounded-sm"
           />
         </figure>
         <p className="text-gray-500 text-xs md:text-sm line-clamp-3 md:line-clamp-4 mb-4">
