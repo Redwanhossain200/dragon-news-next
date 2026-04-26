@@ -22,6 +22,13 @@ const RegisterPage = () => {
       image: photo,
       callbackURL: '/',
     });
+
+    console.log(res, error);
+    if (error) {
+      alert(error.message);
+    } else if (res) {
+      alert('SignUp Successful');
+    }
   };
 
   return (
@@ -59,7 +66,7 @@ const RegisterPage = () => {
             </label>
             <input
               type="text"
-              placeholder="Enter your password"
+              placeholder="Enter your photo"
               className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
               {...register('photo', { required: 'Photo field is required' })}
             />
