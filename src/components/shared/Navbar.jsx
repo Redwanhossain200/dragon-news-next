@@ -52,7 +52,7 @@ const Navbar = () => {
             <Image src={userAvatar} alt="Guest" width={40} height={40} />
             <Link
               href={'/login'}
-              className="btn bg-[#403f3f] rounded-md text-white uppercase hover:backdrop-opacity-90 px-8 border-none">
+              className="btn bg-[#403f3f] rounded-md text-white hover:backdrop-opacity-90 px-8 border-none">
               Login
             </Link>
           </>
