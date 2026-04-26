@@ -7,14 +7,7 @@ const Header = () => {
   return (
     <div className="items-center text-center py-8 space-y-2">
       <div className="flex justify-center">
-        <Image
-          src={logo}
-          alt="Logo"
-          width={200}
-          height={50}
-          priority
-          style={{ width: 'auto', height: 'auto' }}
-        />
+        <Image src={logo} alt="Logo" width={200} height={50} priority />
       </div>
       <p className="text-gray-500">Journalism Without Fear or Favour</p>
       <p className="font-medium text-lg">
