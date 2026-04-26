@@ -6,36 +6,29 @@ import React from 'react';
 
 const NewsCategoryPage = async ({ params }) => {
   const { id } = await params;
-  console.log(id);
-
   const categories = await getCategories();
   const news = await getNewsByCategoryId(id);
 
   return (
-    <div className="grid grid-cols-12 gap-4 container mx-auto my-15">
-      {/* Left side: All Categories */}
-      <div className="col-span-3">
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 container mx-auto my-10 px-4">
+      <div className="md:col-span-3 order-1">
         <LeftSidebar categories={categories} activeId={id} />
       </div>
 
-      {/* Middle: All News */}
-      <div className="col-span-6">
+      <div className="md:col-span-6 order-2">
         <h2 className="font-bold mb-5 text-lg">News By Category</h2>
         <div className="space-y-4">
           {news.length > 0 ? (
-            news.map((n) => {
-              return <NewsCard key={n._id} news={n}></NewsCard>;
-            })
+            news.map((n) => <NewsCard key={n._id} news={n} />)
           ) : (
-            <h2 className="text-4xl uppercase text-gray-600 font-bold my-7 text-center">
-              Now news found!
+            <h2 className="text-2xl md:text-4xl uppercase text-gray-600 font-bold my-7 text-center">
+              No news found!
             </h2>
           )}
         </div>
       </div>
 
-      {/* Right side: Social Icons */}
-      <div className="col-span-3">
+      <div className="md:col-span-3 order-3">
         <RightSidebar />
       </div>
     </div>

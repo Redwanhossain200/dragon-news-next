@@ -11,56 +11,59 @@ const Navbar = () => {
   const user = session?.user;
 
   return (
-    <div className="container mx-auto flex justify-between gap-4 mt-6">
-      <div className="flex-1"></div>
+    <nav className="container mx-auto px-4 mt-6">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="hidden md:block flex-1"></div>
 
-      <ul className="flex justify-between items-center text-gray-700 gap-3">
-        <li>
-          <NavLink href={'/'}>Home</NavLink>
-        </li>
-        <li>
-          <NavLink href={'/about-us'}>About</NavLink>
-        </li>
-        <li>
-          <NavLink href={'/carer'} className={'text-yellow-500'}>
-            Career
-          </NavLink>
-        </li>
-      </ul>
+        <ul className="flex items-center text-gray-700 gap-4 md:gap-5 font-bold order-2 md:order-1">
+          <li>
+            <NavLink href={'/'}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink href={'/about-us'}>About</NavLink>
+          </li>
+          <li>
+            <NavLink href={'/carer'}>Career</NavLink>
+          </li>
+        </ul>
 
-      <div className="flex items-center gap-2 flex-1 justify-end">
-        {isPending ? (
-          <span className="loading loading-bars loading-lg"></span>
-        ) : user ? (
-          <>
-            <h2 className="font-semibold text-[#403f3f]">
-              Hello, {user?.name}
-            </h2>
-            <Image
-              src={user?.image || userAvatar}
-              alt={'User Avatar'}
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <button
-              onClick={async () => await authClient.signOut()}
-              className="btn bg-[#403f3f] rounded-md text-white uppercase hover:opacity-90 px-8 border-none">
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Image src={userAvatar} alt="Guest" width={40} height={40} />
-            <Link
-              href={'/login'}
-              className="btn bg-[#403f3f] rounded-md text-white uppercase hover:backdrop-opacity-90 px-8 border-none">
-              Login
-            </Link>
-          </>
-        )}
+        <div className="flex items-center gap-3 flex-1 justify-center md:justify-end order-1 md:order-2 w-full md:w-auto">
+          {isPending ? (
+            <span className="loading loading-bars loading-md text-[#F75B5F]"></span>
+          ) : user ? (
+            <div className="flex items-center gap-3">
+              <h2 className="hidden sm:block font-semibold text-[#403f3f] text-sm">
+                Hello, {user?.name}
+              </h2>
+              <div className="avatar">
+                <div className="w-10 rounded-full ring ring-[#F75B5F] ring-offset-base-100 ring-offset-2">
+                  <Image
+                    src={user?.image || userAvatar}
+                    alt={'User'}
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
+              <button
+                onClick={async () => await authClient.signOut()}
+                className="btn btn-sm md:btn-md bg-[#403f3f] text-white border-none px-4 md:px-8">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <Image src={userAvatar} alt="Guest" width={35} height={35} />
+              <Link
+                href={'/login'}
+                className="btn btn-sm md:btn-md bg-[#403f3f] text-white border-none px-6 md:px-8">
+                Login
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
