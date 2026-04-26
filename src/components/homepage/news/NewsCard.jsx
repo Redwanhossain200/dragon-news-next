@@ -7,7 +7,7 @@ import { IoIosStar } from 'react-icons/io';
 
 const NewsCard = ({ news }) => {
   return (
-    <div className="card bg-base-100 shadow-sm border border-gray-200 rounded-md overflow-hidden mb-6">
+    <div className="card bg-base-100 shadow-sm border border-gray-200 rounded-md overflow-hidden mb-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="flex justify-between items-center bg-slate-100 p-3 md:p-4">
         <div className="flex items-center gap-3">
           <Image
@@ -15,7 +15,7 @@ const NewsCard = ({ news }) => {
             alt={news.author?.name || 'Author'}
             width={40}
             height={40}
-            className="rounded-full w-8 h-8 md:w-10 md:h-10 object-cover"
+            className="rounded-full w-8 h-8 md:w-10 md:h-10 object-cover transition-transform duration-300 hover:scale-110"
           />
           <div>
             <h2 className="font-semibold text-xs md:text-sm">
@@ -27,13 +27,13 @@ const NewsCard = ({ news }) => {
           </div>
         </div>
         <div className="flex items-center gap-2 text-lg md:text-xl text-gray-600">
-          <CiShare2 className="cursor-pointer hover:text-blue-500" />
-          <CiBookmark className="cursor-pointer hover:text-blue-500" />
+          <CiShare2 className="cursor-pointer hover:text-blue-500 transition-colors duration-200" />
+          <CiBookmark className="cursor-pointer hover:text-blue-500 transition-colors duration-200" />
         </div>
       </div>
 
       <div className="card-body p-4 md:p-5">
-        <h2 className="card-title text-lg md:text-xl font-bold mb-3 leading-tight">
+        <h2 className="card-title text-lg md:text-xl font-bold mb-3 leading-tight transition-colors duration-200 hover:text-[#F75B5F] cursor-pointer">
           {news.title}
         </h2>
         <figure className="mb-4">
@@ -42,7 +42,7 @@ const NewsCard = ({ news }) => {
             alt={news.title}
             width={800}
             height={450}
-            className="w-full h-auto object-cover rounded-sm"
+            className="w-full h-auto object-cover rounded-sm transition-transform duration-500 hover:scale-105"
           />
         </figure>
         <p className="text-gray-500 text-xs md:text-sm line-clamp-3 md:line-clamp-4 mb-4">
@@ -61,7 +61,7 @@ const NewsCard = ({ news }) => {
           </div>
           <Link
             href={`/news/${news._id}`}
-            className="text-[#F75B5F] text-xs md:text-sm font-semibold hover:underline">
+            className="text-[#F75B5F] text-xs md:text-sm font-semibold hover:underline transition-all duration-200 hover:translate-x-1">
             Read More
           </Link>
         </div>

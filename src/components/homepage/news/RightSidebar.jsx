@@ -28,12 +28,12 @@ const RightSidebar = () => {
         <h2 className="font-bold text-lg">Login With</h2>
         <button
           onClick={handleGoogleSignin}
-          className="btn btn-outline btn-info w-full normal-case">
+          className="btn btn-outline btn-info w-full normal-case transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
           <FaGoogle /> Login With Google
         </button>
         <button
           onClick={handleGithubSignin}
-          className="btn btn-outline w-full normal-case">
+          className="btn btn-outline w-full normal-case transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
           <FaGithub /> Login With Github
         </button>
       </div>

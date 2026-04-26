@@ -4,7 +4,7 @@ const AuthLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <div className="animate-fade-in">{children}</div>
     </>
   );
 };

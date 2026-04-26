@@ -43,7 +43,7 @@ const CarerPage = () => {
           {jobs.map((job) => (
             <div
               key={job.id}
-              className="bg-white p-5 md:p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-[#F75B5F] transition-all">
+              className="bg-white p-5 md:p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-[#F75B5F] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer">
               <div>
                 <h3 className="text-lg md:text-xl font-bold text-[#403F3F]">
                   {job.title}

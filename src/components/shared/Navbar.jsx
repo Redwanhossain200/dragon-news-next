@@ -31,15 +31,15 @@ const Navbar = () => {
           {isPending ? (
             <span className="loading loading-bars loading-md text-[#F75B5F]"></span>
           ) : user ? (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <h2 className="hidden sm:block font-semibold text-[#403f3f] text-sm">
                 Hello, {user?.name}
               </h2>
               <div className="avatar">
-                <div className="w-10 rounded-full ring ring-[#F75B5F] ring-offset-base-100 ring-offset-2">
+                <div className="w-8 md:w-10 rounded-full ring ring-[#F75B5F] ring-offset-base-100 ring-offset-2">
                   <Image
                     src={user?.image || userAvatar}
-                    alt={'User'}
+                    alt="User"
                     width={40}
                     height={40}
                   />
@@ -47,16 +47,22 @@ const Navbar = () => {
               </div>
               <button
                 onClick={async () => await authClient.signOut()}
-                className="btn btn-sm md:btn-md bg-[#403f3f] text-white border-none px-4 md:px-8">
+                className="btn btn-xs sm:btn-sm md:btn-md bg-[#403f3f] text-white border-none px-4 transition-all hover:bg-rose-600">
                 Logout
               </button>
             </div>
           ) : (
             <div className="flex items-center gap-3">
-              <Image src={userAvatar} alt="Guest" width={35} height={35} />
+              <Image
+                src={userAvatar}
+                alt="Guest"
+                width={35}
+                height={35}
+                className="hidden sm:block"
+              />
               <Link
-                href={'/login'}
-                className="btn btn-sm md:btn-md bg-[#403f3f] text-white border-none px-6 md:px-8">
+                href="/login"
+                className="btn btn-sm md:btn-md bg-[#403f3f] text-white border-none px-6 md:px-8 hover:bg-rose-600 transition-colors">
                 Login
               </Link>
             </div>

@@ -50,7 +50,7 @@ const RegisterPage = () => {
             <input
               type="text"
               placeholder="Enter your name"
-              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none transition-all duration-300 focus:ring-2 focus:ring-[#F75B5F] focus:scale-[1.01]"
               {...register('name', { required: 'Name field is required' })}
             />
             {errors.name && (
@@ -67,7 +67,7 @@ const RegisterPage = () => {
             <input
               type="text"
               placeholder="Enter your photo"
-              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none transition-all duration-300 focus:ring-2 focus:ring-[#F75B5F] focus:scale-[1.01]"
               {...register('photo', { required: 'Photo field is required' })}
             />
             {errors.photo && (
@@ -86,7 +86,7 @@ const RegisterPage = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none transition-all duration-300 focus:ring-2 focus:ring-[#F75B5F] focus:scale-[1.01]"
               {...register('email', { required: 'Email field is required' })}
             />
             {errors.email && (
@@ -106,7 +106,7 @@ const RegisterPage = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Enter your password"
-                className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+                className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none transition-all duration-300 focus:ring-2 focus:ring-[#F75B5F] focus:scale-[1.01]"
                 {...register('password', {
                   required: 'Password field is required',
                 })}
@@ -125,7 +125,7 @@ const RegisterPage = () => {
             )}
           </div>
 
-          <button className="btn w-full text-white bg-[#403F3F] hover:bg-black border-none rounded-xl h-14 text-lg font-semibold mt-4">
+          <button className="btn w-full text-white bg-[#403F3F] hover:bg-black border-none rounded-xl h-14 text-lg font-semibold mt-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
             Register
           </button>
         </form>

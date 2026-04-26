@@ -16,7 +16,9 @@ const NewsCategoryPage = async ({ params }) => {
       </div>
 
       <div className="md:col-span-6 order-2">
-        <h2 className="font-bold mb-5 text-lg">News By Category</h2>
+        <h2 className="font-bold mb-5 text-lg animate-fade-in">
+          News By Category
+        </h2>
         <div className="space-y-4">
           {news.length > 0 ? (
             news.map((n) => <NewsCard key={n._id} news={n} />)

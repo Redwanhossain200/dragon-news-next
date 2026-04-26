@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 
 const Header = () => {
   return (
-    <div className="items-center text-center py-8 space-y-2">
+    <div className="items-center text-center py-8 space-y-2 animate-fade-in">
       <div className="flex justify-center">
         <Image src={logo} alt="Logo" width={200} height={50} priority />
       </div>

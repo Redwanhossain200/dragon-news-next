@@ -16,7 +16,7 @@ const LeftSidebar = ({ categories, activeId }) => {
             } rounded-md font-bold text-center text-sm md:text-md whitespace-nowrap md:whitespace-normal border border-gray-200 md:border-none`}>
             <Link
               href={`/category/${category.category_id}`}
-              className="block px-5 py-3 md:p-3">
+              className="block px-5 py-3 md:p-3 transition-all duration-300 hover:bg-purple-500 hover:text-white rounded-md">
               {category.category_name}
             </Link>
           </li>

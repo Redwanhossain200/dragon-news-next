@@ -19,7 +19,9 @@ const news = [
 const BreakingNews = () => {
   return (
     <div className="flex justify-between gap-4 items-center bg-gray-200 py-4 px-2 container mx-auto">
-      <button className="btn bg-red-500 text-white">Latest News</button>
+      <button className="btn bg-red-500 text-white transition-all duration-300 hover:bg-red-600 hover:scale-105">
+        Latest News
+      </button>
       <Marquee pauseOnHover={true} speed={90}>
         {news.map((n) => {
           return <span key={n._id}>{n.title}</span>;

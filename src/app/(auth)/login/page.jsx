@@ -48,7 +48,7 @@ const LoginPage = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none transition-all duration-300 focus:ring-2 focus:ring-[#F75B5F] focus:scale-[1.01]"
               {...register('email', { required: 'Email field is required' })}
             />
             {errors.email && (
@@ -69,7 +69,7 @@ const LoginPage = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Enter your password"
-                className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+                className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none transition-all duration-300 focus:ring-2 focus:ring-[#F75B5F] focus:scale-[1.01]"
                 {...register('password', {
                   required: 'Password field is required',
                 })}
@@ -89,7 +89,7 @@ const LoginPage = () => {
             )}
           </div>
 
-          <button className="btn w-full text-white bg-[#403F3F] hover:bg-black border-none rounded-xl h-14 text-lg font-semibold mt-4">
+          <button className="btn w-full text-white bg-[#403F3F] hover:bg-black border-none rounded-xl h-14 text-lg font-semibold mt-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
             Login
           </button>
         </form>

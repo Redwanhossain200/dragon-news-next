@@ -20,7 +20,7 @@ const AboutUsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-stretch mb-12 md:mb-20">
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border-l-4 border-[#F75B5F]">
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border-l-4 border-[#F75B5F] transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
             <h2 className="text-xl md:text-2xl font-bold text-[#403F3F] mb-4">
               Our Mission
             </h2>
@@ -31,7 +31,7 @@ const AboutUsPage = () => {
             </p>
           </div>
 
-          <div className="bg-[#403F3F] p-6 md:p-8 rounded-xl shadow-lg text-white">
+          <div className="bg-[#403F3F] p-6 md:p-8 rounded-xl shadow-lg text-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <h2 className="text-xl md:text-2xl font-bold mb-4">
               Why Choose Us?
             </h2>
