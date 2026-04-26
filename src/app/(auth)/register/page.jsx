@@ -1,9 +1,12 @@
 'use client';
 import { authClient } from '@/lib/auth-client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const RegisterPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -11,9 +14,7 @@ const RegisterPage = () => {
   } = useForm();
 
   const handleRegisterFunc = async (data) => {
-    console.log(data);
     const { email, name, password, photo } = data;
-    console.log(name, photo);
 
     const { data: res, error } = await authClient.signUp.email({
       name: name,
@@ -23,7 +24,6 @@ const RegisterPage = () => {
       callbackURL: '/',
     });
 
-    console.log(res, error);
     if (error) {
       alert(error.message);
     } else if (res) {
@@ -102,14 +102,22 @@ const RegisterPage = () => {
                 Password
               </span>
             </label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
-              {...register('password', {
-                required: 'Password field is required',
-              })}
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Enter your password"
+                className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+                {...register('password', {
+                  required: 'Password field is required',
+                })}
+              />
+              <button
+                type="button"
+                className="absolute right-4 top-1/2 cursor-pointer -translate-y-1/2 text-gray-500 text-xl"
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </button>
+            </div>
             {errors.password && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.password.message}

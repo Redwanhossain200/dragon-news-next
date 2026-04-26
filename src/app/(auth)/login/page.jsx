@@ -1,10 +1,13 @@
 'use client';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const LoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -12,11 +15,9 @@ const LoginPage = () => {
   } = useForm();
 
   const handleLoginFunc = async (data) => {
-    console.log(data);
-
     const { data: res, error } = await authClient.signIn.email({
-      email: data.email, // required
-      password: data.password, // required
+      email: data.email,
+      password: data.password,
       rememberMe: true,
       callbackURL: '/',
     });
@@ -58,14 +59,24 @@ const LoginPage = () => {
                 Password
               </span>
             </label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
-              {...register('password', {
-                required: 'Password field is required',
-              })}
-            />
+
+            <div className="relative">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Enter your password"
+                className="input bg-[#F3F3F3] border-none rounded-md h-14 w-full px-5 outline-none"
+                {...register('password', {
+                  required: 'Password field is required',
+                })}
+              />
+              <button
+                type="button"
+                className="absolute right-4 top-1/2 cursor-pointer -translate-y-1/2 text-gray-500 text-xl"
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+
             {errors.password && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.password.message}

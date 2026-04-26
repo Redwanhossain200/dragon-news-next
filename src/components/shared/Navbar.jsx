@@ -7,7 +7,7 @@ import NavLink from './NavLink';
 import { authClient } from '@/lib/auth-client';
 
 const Navbar = () => {
-  const { data: session } = authClient.useSession();
+  const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
   return (
@@ -29,7 +29,9 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-2 flex-1 justify-end">
-        {user ? (
+        {isPending ? (
+          <span className="loading loading-bars loading-lg"></span>
+        ) : user ? (
           <>
             <h2 className="font-semibold text-[#403f3f]">
               Hello, {user?.name}
@@ -52,7 +54,7 @@ const Navbar = () => {
             <Image src={userAvatar} alt="Guest" width={40} height={40} />
             <Link
               href={'/login'}
-              className="btn bg-[#403f3f] rounded-md text-white hover:backdrop-opacity-90 px-8 border-none">
+              className="btn bg-[#403f3f] rounded-md text-white uppercase hover:backdrop-opacity-90 px-8 border-none">
               Login
             </Link>
           </>
