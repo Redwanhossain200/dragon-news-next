@@ -112,7 +112,7 @@ const CarerPage = () => {
         <div className="mt-12 text-center">
           <Link
             href="/"
-            className="text-gray-500 border py-2 px-6 hover:text-[#F75B5F] font-medium transition-all inline-flex items-center justify-center gap-2 text-sm hover:-translate-x-1">
+            className="text-gray-500 border py-2 px-6 rounded-2xl hover:text-[#F75B5F] font-medium transition-all inline-flex items-center justify-center gap-2 text-sm hover:-translate-x-1">
             ← Back to Homepage
           </Link>
         </div>
